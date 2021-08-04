@@ -10,6 +10,7 @@
 .header {
     position: relative;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 #flagImg {
@@ -23,7 +24,7 @@
 .display-2 {
     font-family: 'formula1';
     position: absolute;
-    top: 50%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ff1801;
@@ -46,6 +47,37 @@
     right: 90px;
     border: 1px solid #ff1801;
 }
+
+.col-3 {
+    font-family: 'formula1';
+    text-align: center;
+    padding: 5px
+}
+
+.col-3:hover {
+    background-color: black;
+    text-transform: uppercase;
+    color: #ff1801;
+    text-decoration: underline;
+}
+
+.row row-cols-2 row-cols-lg-4 g-2 g-lg-3 {   /* How to get pictures from shifting??*/
+    position: absolute
+}
+
+
+/* .driversRowOne {
+    float: left;
+    width: 25%;
+    padding: 8px
+}
+
+.rowOne::after {
+    content: "";
+    clear: both;
+    display: table
+} */
+
 
 /* #f1car or .footer {
     position: fixed;

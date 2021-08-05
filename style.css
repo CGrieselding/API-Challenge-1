@@ -1,5 +1,5 @@
 .bodyWrapper {
-    margin:10px
+    margin:10px;
 }
 
 @font-face {
@@ -24,6 +24,7 @@
 .display-2 {
     font-family: 'formula1';
     position: absolute;
+    min-width: 800px;
     top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -50,6 +51,7 @@
 
 .col-3 {
     font-family: 'formula1';
+    font-size: 22px;
     text-align: center;
     padding: 5px;
     display: block;
@@ -62,19 +64,14 @@
     text-decoration: underline;
 }
 
-/* #driverImage {
-    min-width: 1400px;
-    padding-bottom: 10px;
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-} */
+h2 {
+    font-family: 'formula1';
+}
 
 .footer {
     height: 275px;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0;
     background-image: url(./Assets/f1_racecar.png);
     background-size: 100% 100%;
     min-width: 700px;

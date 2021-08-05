@@ -1,4 +1,4 @@
-const baseURL = "http://ergast.com/api/f1/2021/driverStandings.json";
+const baseURL = "https://ergast.com/api/f1/2021/driverStandings.json";
 const results = document.getElementById("results");
 
 function fetchDrivers() {
@@ -78,7 +78,6 @@ function displayDrivers(data) {
     let biographyText = document.createTextNode(`Read More About ${driver.Driver.givenName + " " + driver.Driver.familyName} Here!`)
     driverBiography.appendChild(biographyText);
     driverBiography.href = driver.Driver.url;
-    // window.open(driverBiography.href, '_blank');
     driverBiography.style.color = "#ff1801";
 
     let modalFooter = document.createElement("div");

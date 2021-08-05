@@ -78,7 +78,7 @@ function displayDrivers(data) {
     let biographyText = document.createTextNode(`Read More About ${driver.Driver.givenName + " " + driver.Driver.familyName} Here!`)
     driverBiography.appendChild(biographyText);
     driverBiography.href = driver.Driver.url;
-    window.open(driverBiography.href, '_blank');
+    // window.open(driverBiography.href, '_blank');
     driverBiography.style.color = "#ff1801";
 
     let modalFooter = document.createElement("div");

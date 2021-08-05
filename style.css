@@ -1,5 +1,5 @@
 .bodyWrapper {
-    margin: 10px;
+    margin:10px
 }
 
 @font-face {
@@ -51,7 +51,8 @@
 .col-3 {
     font-family: 'formula1';
     text-align: center;
-    padding: 5px
+    padding: 5px;
+    display: block;
 }
 
 .col-3:hover {
@@ -61,26 +62,23 @@
     text-decoration: underline;
 }
 
-.row row-cols-2 row-cols-lg-4 g-2 g-lg-3 {   /* How to get pictures from shifting??*/
-    position: absolute
-}
-
-
-/* .driversRowOne {
-    float: left;
-    width: 25%;
-    padding: 8px
-}
-
-.rowOne::after {
-    content: "";
-    clear: both;
-    display: table
+/* #driverImage {
+    min-width: 1400px;
+    padding-bottom: 10px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
 } */
 
-
-/* #f1car or .footer {
-    position: fixed;
-    bottom: 0px;
-    left: 50%;
-} */
+.footer {
+    height: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    background-image: url(./Assets/f1_racecar.png);
+    background-size: 100% 100%;
+    min-width: 700px;
+    max-width: 800px;
+    display: flex;
+    justify-content: baseline;
+}

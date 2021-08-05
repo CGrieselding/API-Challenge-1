@@ -15,30 +15,6 @@ fetchDrivers();
 let row = document.createElement("div");
 row.setAttribute("class", "row");
 
-// <!-- Button trigger modal -->
-// <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-//   Launch demo modal
-// </button>
-
-// <!-- Modal -->
-// <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-//   <div class="modal-dialog">
-//     <div class="modal-content">
-//       <div class="modal-header">
-//         SKIP  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-//         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//       </div>
-//       <div class="modal-body">
-//         ...
-//       </div>
-//       <div class="modal-footer">
-//         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-//         <button type="button" class="btn btn-primary">Save changes</button>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
 function displayDrivers(data) {
   for (driver of data.MRData.DriverTable.Drivers) {
     console.log(driver);
@@ -46,18 +22,17 @@ function displayDrivers(data) {
     let col = document.createElement("div");
     col.setAttribute("class", "col-3");
 
-    // START OF MODAL
     let button = document.createElement("a");
     button.setAttribute("data-bs-toggle", "modal");
-    button.setAttribute("data-bs-target", "#exampleModal");
+    button.setAttribute("data-bs-target", `#${driver.givenName}`);
 
     button.innerText = driver.givenName + " " + driver.familyName;
 
     let modal = document.createElement("div");
     modal.setAttribute("class", "modal fade");
-    modal.setAttribute("id", "exampleModal");
+    modal.setAttribute("id", `${driver.givenName}`);
     modal.setAttribute("tabindex", -1);
-    modal.setAttribute("aria-labelledby", "exampleModalLabel");
+    modal.setAttribute("aria-labelledby", `${driver.givenName}ModalLabel`);
     modal.setAttribute("aria-hidden", true);
 
     let modalDialog = document.createElement("div");
@@ -69,32 +44,31 @@ function displayDrivers(data) {
     let modalHeader = document.createElement("div");
     modalHeader.setAttribute("class", "modal-header");
 
-    let nameHeader = document.createElement("h5");      // ADDED
-    nameHeader.innerText = driver.givenName + " " + driver.familyName;
-
     let buttonTwo = document.createElement("button");
     buttonTwo.setAttribute("class", "btn-close");
     buttonTwo.setAttribute("data-bs-dismiss", "modal");
     buttonTwo.setAttribute("aria-label", "Close");
 
+    let nameHeader = document.createElement("h5");
+    nameHeader.innerText = driver.givenName + " " + driver.familyName;
+
     let modalBody = document.createElement("div");
     modalBody.setAttribute("class", "modal-body");
-    
-    // MODAL BODY START
 
-    let birthDate = document.createElement("p");    // ADDED
+    let birthDate = document.createElement("p");   
     birthDate.innerText = 'Date of Birth: ' + driver.dateOfBirth;
 
     let driverNationality = document.createElement("p");
     driverNationality.innerText = 'Nationality: ' + driver.nationality;
 
     let driverNumber = document.createElement("p");
-    driverNumber.innerText = 'Permanent Number: ' + driver.permanentNumber;
+    driverNumber.innerText = 'Car Number: ' + driver.permanentNumber;
 
-    let driverBiography = document.createElement("p");
-    driverBiography.innerText = 'Biography: ' + driver.url;
-
-    // MODAY BODY END
+    let driverBiography = document.createElement("a");
+    let biographyText = document.createTextNode('Click Here for Driver\'s Biography')
+    driverBiography.appendChild(biographyText);
+    driverBiography.href = driver.url
+    driverBiography.style.color = "#ff1801"
 
     let modalFooter = document.createElement("div");
     modalFooter.setAttribute("class", "modal-footer");
@@ -102,19 +76,20 @@ function displayDrivers(data) {
     col.appendChild(button);      
     row.appendChild(col);         
 
-    results.appendChild(row);         // IN MODAL
+    results.appendChild(row);
     document.body.appendChild(modal);
     modal.appendChild(modalDialog);
     modalDialog.appendChild(modalContent);
     modalContent.appendChild(modalHeader);
-    modalHeader.appendChild(buttonTwo);
     modalHeader.appendChild(nameHeader);
+    modalHeader.appendChild(buttonTwo);
     modalContent.appendChild(modalBody);
-    modalBody.appendChild(birthDate);         // ADDED
-    modalBody.appendChild(driverNationality); // ADDED
-    modalBody.appendChild(driverNumber);      // ADDED 
-    modalBody.appendChild(driverBiography);   // ADDED
-    modalContent.appendChild(modalFooter);
-    // END OF MODAL
+    modalBody.appendChild(birthDate);
+    modalBody.appendChild(driverNationality); 
+    modalBody.appendChild(driverNumber);
+    modalBody.appendChild(driverBiography);
+    modalContent.appendChild(modalFooter)
   }
 }
+
+// Adding images in???
